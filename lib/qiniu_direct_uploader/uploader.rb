@@ -73,12 +73,13 @@ module QiniuDirectUploader
     end
 
     def token
-      put_policy = Qiniu::Auth::PutPolicy.new( @options[:bucket], @options[:key], @options[:expires_in], nil )
-      put_policy.return_body = return_body
-      put_policy.save_key = save_key
-      put_policy.end_user = @options[:customer] if @options[:customer]
-
-      Qiniu::Auth.generate_uptoken(put_policy)
+      # put_policy = Qiniu::Auth::PutPolicy.new( @options[:bucket], @options[:key], @options[:expires_in], nil )
+      # put_policy.return_body = return_body
+      # put_policy.save_key = save_key
+      # put_policy.end_user = @options[:customer] if @options[:customer]
+      #
+      # Qiniu::Auth.generate_uptoken(put_policy)
+      ""
     end
   end
 end
