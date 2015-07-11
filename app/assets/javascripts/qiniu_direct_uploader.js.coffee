@@ -105,20 +105,20 @@ $.fn.QiniuUploader = (options) ->
       formData: (form) ->
         data = form.serializeArray()
 
-        key = $uploadForm.data("key")
+        #key = $uploadForm.data("key")
 
-        # substitute upload timestamp and uniqueId into key
-        keyField = $.grep data, (n) ->
-          n if n.name == "key"
+        ## substitute upload timestamp and uniqueId into key
+        #keyField = $.grep data, (n) ->
+          #n if n.name == "key"
 
-        if keyField.length > 0
-          keyField[0].value = key
+        #if keyField.length > 0
+          #keyField[0].value = key
 
-        # IE <= 9 doesn't have XHR2 hence it can't use formData
-        # replace 'key' field to submit form
-        unless 'FormData' of window
-          $uploadForm.find("input[name='key']").val(key)
-        data
+        ## IE <= 9 doesn't have XHR2 hence it can't use formData
+        ## replace 'key' field to submit form
+        #unless 'FormData' of window
+          #$uploadForm.find("input[name='key']").val(key)
+        #data
 
     $uploadForm.fileupload $.extend true, {}, settings, inner_settings
 
